@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eswatini Darts</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <img src="logo.png" alt="Eswatini Darts Logo" class="logo">
+      <h1>Eswatini Darts Association</h1>
+      <div id="user-info"></div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+      <button onclick="showPage('home')">Home</button>
+      <button onclick="showPage('login')" id="login-btn">Login / Register</button>
+      <button onclick="showPage('team')" id="team-btn" class="hidden">My Team</button>
+      <button onclick="showPage('players')" id="players-btn" class="hidden">Players</button>
+    </nav>
+
+    <!-- Pages -->
+    <main>
+      <div id="home" class="page">
+        <h2>Welcome to Eswatini Darts</h2>
+        <p>The official home of darts in the Kingdom of Eswatini</p>
+        <div class="stats-grid">
+          <div><strong id="total-players">0</strong> Players</div>
+          <div><strong id="total-teams">0</strong> Teams</div>
+        </div>
+        <button class="btn-primary" onclick="showPage('login')">Get Started →</button>
+      </div>
+
+      <div id="login" class="page hidden">
+        <h2>Player Login / Register</h2>
+        <input type="text" id="player-name" placeholder="Full Name">
+        <input type="email" id="player-email" placeholder="Email">
+        <input type="text" id="player-nickname" placeholder="Nickname (optional)">
+        <button class="btn-primary" onclick="registerPlayer()">Register / Login</button>
+      </div>
+
+      <div id="team" class="page hidden">
+        <h2 id="team-title">Create Your Team</h2>
+        <div id="team-form">
+          <input type="text" id="team-name" placeholder="Team Name">
+          <input type="text" id="home-venue" placeholder="Home Pub / Venue">
+          <button class="btn-primary" onclick="createOrUpdateTeam()">Create Team</button>
+        </div>
+
+        <div id="team-dashboard" class="hidden">
+          <h3 id="current-team-name"></h3>
+          <p>Home Venue: <span id="team-venue"></span></p>
+          <p>Members: <span id="member-count">0</span>/12</p>
+          <ul id="member-list"></ul>
+          <p>Share this link to add players:</p>
+          <input type="text" id="invite-link" readonly>
+          <button onclick="navigator.clipboard.writeText(document.getElementById('invite-link').value)">
+            Copy Invite Link
+          </button>
+          <button class="btn-danger" onclick="leaveTeam()">Leave / Delete Team</button>
+        </div>
+      </div>
+
+      <div id="players" class="page hidden">
+        <h2>All Registered Players</h2>
+        <div id="players-list"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<head>
+  <meta charset="UTF-8">=1
+
+
+
+</html>
